@@ -24,7 +24,7 @@ const Register = () => {
     try {
       await axios
         .post(
-          "http://localhost:5000/api/v1/user/patient/register",
+          "https://doctorathomeserver.vercel.app/api/v1/user/patient/register",
           { firstName, lastName, email, phone, nic, dob, gender, password },
           {
             withCredentials: true,
@@ -45,8 +45,8 @@ const Register = () => {
           setPassword("");
         });
     } catch (error) {
-      alert(error.response.data.message);
-      //toast.error(error.response.data.message);
+      //alert(error.response.data.message);
+      toast.error(error.response.data.message);
     }
   };
 
